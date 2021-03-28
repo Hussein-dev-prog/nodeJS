@@ -40,6 +40,8 @@ function onDataReceived(text) {
   else if (text.trim() === 'hello') {
     hello();
   }
+  // help command is for list all the possible commands
+
   else if (text.trim() === 'help') {
     console.log("1-hello\n2-quit\n3-exit");
   }
