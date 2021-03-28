@@ -40,11 +40,14 @@ function onDataReceived(text) {
   else if (text.trim() === 'hello') {
     hello();
   }
+  else if (text.trim() === 'help') {
+    console.log("1-hello\n2-quit\n3-exit");
+  }
+
   else {
     unknownCommand(text);
   }
 }
-
 
 /**
  * prints "unknown command"
