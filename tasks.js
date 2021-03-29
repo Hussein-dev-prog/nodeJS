@@ -19,20 +19,20 @@ function startApp(name) {
 
 
 /**
- * Decides what to do depending on the data that was received
- * This function receives the input sent by the user.
- * 
- * For example, if the user entered 
- * ```
- * node tasks.js batata
- * ```
- * 
- * The text received would be "batata"
- * This function  then directs to other functions
- * 
- * @param  {string} text data typed by the user
- * @returns {void}
- */
+* Decides what to do depending on the data that was received
+* This function receives the input sent by the user.
+* 
+* For example, if the user entered 
+* ```
+* node tasks.js batata
+* ```
+* 
+* The text received would be "batata"
+* This function  then directs to other functions
+* 
+* @param  {string} text data typed by the user
+* @returns {void}
+*/
 function onDataReceived(text) {
   if (text.trim() === 'quit' || text.trim() === 'exit') {
     quit();
@@ -49,47 +49,64 @@ function onDataReceived(text) {
   else if (text.trim() === 'help') {
     console.log("1-hello\n2-hello \"Your-Name\"\n3-quit\n4-exit");
   }
+  else if (text.trim() === 'list') {
+    list();
+  }
 
   else {
     unknownCommand(text);
   }
+
 }
 
+
 /**
- * prints "unknown command"
- * This function is supposed to run when all other commands have failed
- *
- * @param  {string} c the text received
- * @returns {void}
- */
+* prints "unknown command"
+* This function is supposed to run when all other commands have failed
+*
+* @param  {string} c the text received
+* @returns {void}
+*/
 function unknownCommand(c) {
   console.log('unknown command: "' + c.trim() + '"')
 }
 /**
- * prints "unknown command"
- * This function is supposed to run when all other commands have failed
- *
+* prints "unknown command"
+* This function is supposed to run when all other commands have failed
+*
 
 
 
 /**
- * Says hello
- *
- * @returns {void}
- */
+* Says hello
+*
+* @returns {void}
+*/
 function hello() {
   console.log('hello!')
 }
 
 
 /**
- * Exits the application
- *
- * @returns {void}
- */
+* Exits the application
+*
+* @returns {void}
+*/
 function quit() {
   console.log('Quitting now, goodbye!')
   process.exit();
+}
+/**
+  * list all tasks
+  *
+  * @returns {void}
+  */
+function list() {
+  var List;
+  for (let i = 1; i <= 5; i++) {
+
+    console.log(i + "- Step " + i);
+  }
 }
 
 // The following line starts the application
