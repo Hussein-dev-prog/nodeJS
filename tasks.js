@@ -38,9 +38,9 @@ function onDataReceived(text) {
     quit();
 
   }
-  // else if (text.trim() === 'hello') {
-  //   hello();
-  // }
+  else if (text.trim() === 'hello') {
+    hello();
+  }
   else if (text.split(' ')[0] === 'hello') {
     console.log(text.trim() + "!");
   }
