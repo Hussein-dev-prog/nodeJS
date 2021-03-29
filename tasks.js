@@ -36,9 +36,13 @@ function startApp(name) {
 function onDataReceived(text) {
   if (text.trim() === 'quit' || text.trim() === 'exit') {
     quit();
+
   }
-  else if (text.trim() === 'hello') {
-    hello();
+  // else if (text.trim() === 'hello') {
+  //   hello();
+  // }
+  else if (text.split(' ')[0] === 'hello') {
+    console.log(text.trim() + "!");
   }
   // help command is for list all the possible commands
 
@@ -61,6 +65,11 @@ function onDataReceived(text) {
 function unknownCommand(c) {
   console.log('unknown command: "' + c.trim() + '"')
 }
+/**
+ * prints "unknown command"
+ * This function is supposed to run when all other commands have failed
+ *
+
 
 
 /**
