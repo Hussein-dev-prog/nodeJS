@@ -17,7 +17,7 @@ function startApp(name) {
   console.log("--------------------")
 }
 
-
+global.array = [];
 /**
 * Decides what to do depending on the data that was received
 * This function receives the input sent by the user.
@@ -34,6 +34,8 @@ function startApp(name) {
 * @returns {void}
 */
 function onDataReceived(text) {
+  //var array = [];
+  var a;
   if (text.trim() === 'quit' || text.trim() === 'exit') {
     quit();
 
@@ -50,7 +52,16 @@ function onDataReceived(text) {
     console.log("1-hello\n2-hello \"Your-Name\"\n3-quit\n4-exit");
   }
   else if (text.trim() === 'list') {
-    list();
+    list(array);
+  }
+  else if (text.trim().split(" ", 1) == 'add') {
+    if (text.trim() === 'add') {
+      console.log("error");
+    }
+    else {
+      a = text.trim().split(" ").pop();
+      add(a, array);
+    }
   }
 
   else {
@@ -96,18 +107,23 @@ function quit() {
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+function add(a, array) {
+  // array = [];
+  array.push(a);
+  console.log(a + " is added Successfully");
+}
 /**
   * list all tasks
   *
-  * @returns {void}
+  * 
   */
-function list() {
-  var List;
-  for (let i = 1; i <= 5; i++) {
+function list(array) {
+  for (let i = 0; i < array.length; i++) {
 
-    console.log(i + "- Step " + i);
+    console.log(i + "- Step " + i + "[ " + array[i] + " ]");
   }
 }
+
 
 // The following line starts the application
 startApp("Hussein Aref")
