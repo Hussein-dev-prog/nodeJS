@@ -49,7 +49,7 @@ function onDataReceived(text) {
   // help command is for list all the possible commands
 
   else if (text.trim() === 'help') {
-    console.log("1-hello\n2-hello \"Your-Name\"\n3-quit\n4-exit");
+    console.log("1-hello\n2-hello \"Your-Name\"\n3-quit\n4-exit\n4-list\n5-add\n6-remove");
   }
   else if (text.trim() === 'list') {
     list(array);
